@@ -7,13 +7,13 @@
 ## 👤 Student Information
 
 * **Student Name:** ARCHITA RANJEETKUMAR JHA
-* **PRN (Roll Number):** 1262243200
+* **PRN:** 1262243200
 * **Class & Branch:** TY B.Tech Computer Science & Engineering (Artificial Intelligence & Data Science)
 * **Semester:** Semester 5
 * **Panel:** Panel F
 * **Batch:** Batch F2
 * **Domain:** Coding Platforms & Interactive Developer Tools
-* **GitHub Repository:** [aarchitajha/UIUX_Assignments](https://github.com/aarchitajha/UIUX_Assignments)
+
 
 ---
 
