@@ -23,12 +23,61 @@
   [https://www.figma.com/design/m2qqUWH8PDtH6girwqRZ1c/CODING_PLATFORM--Copy-?node-id=3-2&p=f&t=KEm31piQZXm4PfSq-0](https://www.figma.com/design/m2qqUWH8PDtH6girwqRZ1c/CODING_PLATFORM--Copy-?node-id=3-2&p=f&t=KEm31piQZXm4PfSq-0)
 * 📐 **Low-Fidelity Architecture & Wireframes (Figma):**  
   [https://www.figma.com/design/m2qqUWH8PDtH6girwqRZ1c/CODING_PLATFORM--Copy-?node-id=0-1&p=f&t=KEm31piQZXm4PfSq-0](https://www.figma.com/design/m2qqUWH8PDtH6girwqRZ1c/CODING_PLATFORM--Copy-?node-id=0-1&p=f&t=KEm31piQZXm4PfSq-0)
-* 📊 **Interactive Infographic Report (HTML):**  
+* **Interactive Infographic Report (HTML):**  
   [CONCLUSION_REPORT_INFOGRAPHIC.html](CONCLUSION_REPORT_INFOGRAPHIC.html)
 * 📄 **Comprehensive Conclusion Report (Markdown):**  
   [FINAL_CONCLUSION_REPORT.md](FINAL_CONCLUSION_REPORT.md)
 
 ---
+## 📁: GitHub Repository Structure
+
+The repository is organized strictly according to the submission specification:
+
+```
+UIUX_Assignments/
+├── README.md                      # Primary Submission Document (Student info, Figma links, Conclusion)
+├── FINAL_CONCLUSION_REPORT.md     # Standalone 1-2 page Synthesis Report
+├── CONCLUSION_REPORT_INFOGRAPHIC.html # Visual, responsive Interactive Infographic Report
+├── /audio_files                   # Raw audio recordings of the Think Aloud sessions
+│   ├── aanvi bindal - 1262243296.m4a
+│   ├── jashna gupta - 1262243103.m4a
+│   ├── nisarg ghule - 1262243177.m4a
+│   ├── nisarg malhotra - 1262243207.m4a
+│   └── paraansh nisar - 1272250941.m4a
+├── /transcripts                   # Text transcript files of speech-to-text conversion
+│   ├── aanvi_bindal_transcript.txt
+│   ├── jashna_gupta_transcript.txt
+│   ├── nisarg_ghule_transcript.txt
+│   ├── nisarg_malhotra_transcript.txt
+│   └── paraansh_nisar_transcript.txt
+├── /survey_data                   # All previous exercises/practical data & survey datasets
+│   ├── experiment1(doc)_1262243200_ArchitaJha.docx   # Assignment 1 Heuristic Report
+│   ├── experiment1_1262243200_ArchitaJha.xlsx        # Assignment 1 Scoring Rubric
+│   ├── experiment2_1262243200_ArchitaJha.pptx        # Assignment 2 Personas & User Journeys
+│   ├── experiment3.pdf                               # Assignment 3 Wireframe & Architecture
+│   ├── experiment5.docx                              # Assignment 5 Nielsen Heuristic Evaluation
+│   ├── experiment6-map.png                           # Assignment 6 User Interaction Map
+│   ├── experiment6.pdf                               # Assignment 6 Final High-Fi Export
+│   ├── quantitative_ux_survey_results.csv            # 10-Dimensional UX survey dataset
+│   ├── sus_scores_comparison.csv                     # Itemized SUS survey calculations
+│   └── quantitative_survey_analysis.md               # Detailed statistical survey documentation
+└── /end_sem_experiments          # Dedicated subfolder containing end-semester practical files
+    ├── experiment1(doc)_1262243200_ArchitaJha.docx
+    ├── experiment1_1262243200_ArchitaJha.xlsx
+    ├── experiment2_1262243200_ArchitaJha.pptx
+    ├── experiment3.pdf
+    ├── experiment4/
+    │   ├── Contests — Destination.pdf
+    │   ├── Home — High Fidelity.pdf
+    │   ├── MacBook — High Fidelity.pdf
+    │   ├── Practice Pattern — Destination.pdf
+    │   ├── Problems — Destination.pdf
+    │   ├── Resume Recap — Destination.pdf
+    │   └── Study — Destination.pdf
+    ├── experiment5.docx
+    ├── experiment6-map.png
+    └── experiment6.pdf
+```
 
 ## 📌 Executive Summary & Study Objective
 
@@ -79,7 +128,7 @@ Full speech-to-text transcripts for all five participants are archived in [`/tra
 | *Fragmented problem drilling without retention* | **Practice Pattern Framework** (Warm-up $\rightarrow$ Apply $\rightarrow$ Reflect), In-Situ Topic Notes, and Past Attempt Reviews | *"Study section has pattern notes, guided learning, your progress... Contests has weekly practice, mock interview, past attempts... UX is excellent."* — **Nisarg Malhotra** |
 | *Unsaved code anxiety & cumbersome submission* | **Automatic State Persistence** & streamlined run/submit interface | *"LeetCode does not auto-save your codes, whereas this does... and running and submitting is much easier."* — **Paraansh Nisar** |
 
-### 💖 Qualitative Affective State Analysis: How Participants Were Feeling
+### Qualitative Affective State Analysis: How Participants Were Feeling
 
 Beyond functional mechanics, the Think-Aloud protocol revealed dramatic shifts in user emotional states between the two systems:
 
@@ -93,7 +142,7 @@ Beyond functional mechanics, the Think-Aloud protocol revealed dramatic shifts i
 
 ---
 
-## 📊 Step 4: Quantitative UX Survey Results & SUS Benchmarks
+## Step 4: Quantitative UX Survey Results & SUS Benchmarks
 
 ### 4.1 10-Dimensional UX Evaluation (1–10 Scale)
 
@@ -136,7 +185,7 @@ Archita Prototype : [95.0 / 100]  ■■■■■■■■■■ (Grade A+ - Wor
 
 ---
 
-## 🏆 Step 5: Final Conclusion Summary
+## Step 5: Final Conclusion Summary
 
 ### Evidence-Based Usability Verdict:
 **Did the prototype successfully improve the user experience?**  
@@ -155,59 +204,10 @@ While the prototype achieved world-class usability marks, heuristic analysis and
 
 ---
 
-## 📁 Step 6: GitHub Repository Structure
-
-The repository is organized strictly according to the submission specification:
-
-```
-UIUX_Assignments/
-├── README.md                      # Primary Submission Document (Student info, Figma links, Conclusion)
-├── FINAL_CONCLUSION_REPORT.md     # Standalone 1-2 page Synthesis Report
-├── CONCLUSION_REPORT_INFOGRAPHIC.html # Visual, responsive Interactive Infographic Report
-├── /audio_files                   # Raw audio recordings of the Think Aloud sessions
-│   ├── aanvi bindal - 1262243296.m4a
-│   ├── jashna gupta - 1262243103.m4a
-│   ├── nisarg ghule - 1262243177.m4a
-│   ├── nisarg malhotra - 1262243207.m4a
-│   └── paraansh nisar - 1272250941.m4a
-├── /transcripts                   # Text transcript files of speech-to-text conversion
-│   ├── aanvi_bindal_transcript.txt
-│   ├── jashna_gupta_transcript.txt
-│   ├── nisarg_ghule_transcript.txt
-│   ├── nisarg_malhotra_transcript.txt
-│   └── paraansh_nisar_transcript.txt
-├── /survey_data                   # All previous exercises/practical data & survey datasets
-│   ├── experiment1(doc)_1262243200_ArchitaJha.docx   # Assignment 1 Heuristic Report
-│   ├── experiment1_1262243200_ArchitaJha.xlsx        # Assignment 1 Scoring Rubric
-│   ├── experiment2_1262243200_ArchitaJha.pptx        # Assignment 2 Personas & User Journeys
-│   ├── experiment3.pdf                               # Assignment 3 Wireframe & Architecture
-│   ├── experiment5.docx                              # Assignment 5 Nielsen Heuristic Evaluation
-│   ├── experiment6-map.png                           # Assignment 6 User Interaction Map
-│   ├── experiment6.pdf                               # Assignment 6 Final High-Fi Export
-│   ├── quantitative_ux_survey_results.csv            # 10-Dimensional UX survey dataset
-│   ├── sus_scores_comparison.csv                     # Itemized SUS survey calculations
-│   └── quantitative_survey_analysis.md               # Detailed statistical survey documentation
-└── /end_sem_experiments          # Dedicated subfolder containing end-semester practical files
-    ├── experiment1(doc)_1262243200_ArchitaJha.docx
-    ├── experiment1_1262243200_ArchitaJha.xlsx
-    ├── experiment2_1262243200_ArchitaJha.pptx
-    ├── experiment3.pdf
-    ├── experiment4/
-    │   ├── Contests — Destination.pdf
-    │   ├── Home — High Fidelity.pdf
-    │   ├── MacBook — High Fidelity.pdf
-    │   ├── Practice Pattern — Destination.pdf
-    │   ├── Problems — Destination.pdf
-    │   ├── Resume Recap — Destination.pdf
-    │   └── Study — Destination.pdf
-    ├── experiment5.docx
-    ├── experiment6-map.png
-    └── experiment6.pdf
-```
 
 ---
 
-## 📋 Step 7: Final Submission Verification Checklist
+## 📋 Step 6: Final Submission Verification Checklist
 
 - [x] **Participant Recruitment ($N \ge 5$):** 5 student participants tested and documented.
 - [x] **Think Aloud Protocol Conducted:** 1-on-1 testing comparing Original LeetCode vs. Prototype.
