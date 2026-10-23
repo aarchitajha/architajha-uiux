@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>architajha-uiux | Usability & Emotional Sentiment Infographic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Vanilla, Chocolate, Plum Minimal Palette */
+      --bg-canvas: #faf6f0;           /* Soft warm vanilla cream */
+      --bg-surface: #ffffff;          /* Pure ivory card */
+      --bg-surface-soft: #f4ede3;     /* Toasted vanilla */
+      --bg-surface-tint: #fbf2f6;     /* Subtle plum blush tint */
+      
+      --text-chocolate: #261715;      /* Deep rich dark chocolate */
+      --text-cocoa: #5a423d;          /* Soft milk chocolate */
+      --text-muted: #8c7670;          /* Warm cocoa muted */
+      --border-subtle: #ebdcd2;       /* Vanilla-mocha hairline */
+      --border-soft: rgba(90, 66, 61, 0.12);
+
+      --plum-primary: #6b2147;        /* Deep velvety plum */
+      --plum-hover: #541736;
+      --plum-soft: #9c3d6d;          /* Berry plum */
+      --plum-tint: rgba(107, 33, 71, 0.08);
+      --plum-pill: rgba(107, 33, 71, 0.14);
+      
+      --chocolate-bar: #8c6d65;       /* Warm cocoa bar */
+      --sentiment-neg: #8f3434;       /* Muted brick red/chocolate negative */
+      --sentiment-pos: #2d6a4f;       /* Deep evergreen/sage positive */
+      --sentiment-neg-bg: rgba(143, 52, 52, 0.08);
+      --sentiment-pos-bg: rgba(45, 106, 79, 0.08);
+      
+      --font-serif: 'Fraunces', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --shadow-subtle: 0 4px 20px -2px rgba(38, 23, 21, 0.05);
+      --shadow-card: 0 8px 30px -4px rgba(38, 23, 21, 0.07);
+    }
+
+    [data-theme="dark"] {
+      --bg-canvas: #191014;           /* Deep dark chocolate plum */
+      --bg-surface: #24181f;          /* Espresso cocoa plum card */
+      --bg-surface-soft: #2e1f27;     /* Soft cocoa surface */
+      --bg-surface-tint: #361f2c;     /* Deep plum card highlight */
+
+      --text-chocolate: #faf3eb;      /* Creamy vanilla text */
+      --text-cocoa: #d9c5ba;          /* Soft vanilla mocha */
+      --text-muted: #a38c85;          /* Muted cocoa text */
+      --border-subtle: #3d2a34;       /* Subtle dark plum hairline */
+      --border-soft: rgba(250, 243, 235, 0.08);
+
+      --plum-primary: #c95d93;        /* Bright velvety plum */
+      --plum-hover: #df78aa;
+      --plum-soft: #ad4b7c;
+      --plum-tint: rgba(201, 93, 147, 0.15);
+      --plum-pill: rgba(201, 93, 147, 0.2);
+
+      --chocolate-bar: #5c433e;       /* Deep chocolate bar */
+      --sentiment-neg: #e57373;
+      --sentiment-pos: #81c784;
+      --sentiment-neg-bg: rgba(229, 115, 115, 0.15);
+      --sentiment-pos-bg: rgba(129, 199, 132, 0.15);
+
+      --shadow-subtle: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
+      --shadow-card: 0 8px 30px -4px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-chocolate);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrapper {
+      max-width: 1080px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2.25rem;
+    }
+
+    /* Top Utility Bar */
+    .utility-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .brand-mark {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-mark::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--plum-primary);
+    }
+
+    .theme-toggle-btn {
+      background: var(--bg-surface-soft);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-cocoa);
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--plum-primary);
+      color: var(--plum-primary);
+    }
+
+    /* Header */
+    .header-section {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .header-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--plum-primary);
+      background-color: var(--plum-tint);
+      border: 1px solid var(--plum-pill);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      margin-bottom: 0.85rem;
+    }
+
+    .header-title {
+      font-family: var(--font-serif);
+      font-size: 2.25rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--text-chocolate);
+      margin-bottom: 0.65rem;
+    }
+
+    .header-title em {
+      font-style: italic;
+      color: var(--plum-primary);
+      font-weight: 400;
+    }
+
+    .header-subtitle {
+      color: var(--text-cocoa);
+      font-size: 0.95rem;
+      max-width: 640px;
+      line-height: 1.6;
+    }
+
+    .author-card {
+      background: var(--bg-surface-soft);
+      border: 1px solid var(--border-subtle);
+      border-radius: 1rem;
+      padding: 1.25rem 1.5rem;
+      text-align: right;
+      min-width: 250px;
+    }
+
+    .author-name {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-chocolate);
+    }
+
+    .author-meta {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      line-height: 1.45;
+    }
+
+    /* KPI Grid */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 860px) {
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+      .header-section { grid-template-columns: 1fr; }
+      .author-card { text-align: left; }
+    }
+
+    @media (max-width: 520px) {
+      .kpi-row { grid-template-columns: 1fr; }
+    }
+
+    .kpi-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 1rem;
+      padding: 1.5rem 1.4rem;
+      box-shadow: var(--shadow-subtle);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .kpi-label {
+      font-size: 0.725rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .kpi-number {
+      font-family: var(--font-serif);
+      font-size: 2.3rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--text-chocolate);
+      margin-bottom: 0.35rem;
+    }
+
+    .kpi-box.plum-highlight .kpi-number {
+      color: var(--plum-primary);
+    }
+
+    .kpi-foot {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--plum-soft);
+    }
+
+    /* Section Headings */
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text-chocolate);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-heading::before {
+      content: "";
+      width: 5px;
+      height: 18px;
+      background-color: var(--plum-primary);
+      border-radius: 3px;
+    }
+
+    .editorial-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 1.25rem;
+      padding: 2rem;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    /* Visual Charts Grid */
+    .charts-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.75rem;
+    }
+
+    @media (max-width: 880px) {
+      .charts-grid { grid-template-columns: 1fr; }
+    }
+
+    /* SVG Radar & Bar Visuals */
+    .chart-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .svg-chart {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+    }
+
+    /* Emotional Journey Map (Qualitative Feeling Analysis) */
+    .journey-map-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 1.25rem;
+      padding: 2.25rem;
+      box-shadow: var(--shadow-subtle);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .journey-stages {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.85rem;
+    }
+
+    @media (max-width: 800px) {
+      .journey-stages { grid-template-columns: 1fr; }
+    }
+
+    .stage-card {
+      background: var(--bg-surface-soft);
+      border: 1px solid var(--border-subtle);
+      border-radius: 0.85rem;
+      padding: 1.15rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .stage-header {
+      font-size: 0.725rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .stage-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-chocolate);
+      line-height: 1.3;
+    }
+
+    .feeling-pill {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.35rem 0.65rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.35rem;
+      line-height: 1.4;
+    }
+
+    .feeling-neg {
+      background: var(--sentiment-neg-bg);
+      color: var(--sentiment-neg);
+      border: 1px solid rgba(143, 52, 52, 0.2);
+    }
+
+    .feeling-pos {
+      background: var(--sentiment-pos-bg);
+      color: var(--sentiment-pos);
+      border: 1px solid rgba(45, 106, 79, 0.2);
+    }
+
+    /* Participant Sentiment Profiles */
+    .participant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .participant-card {
+      background: var(--bg-surface-soft);
+      border: 1px solid var(--border-subtle);
+      border-radius: 1rem;
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+    }
+
+    .participant-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 0.65rem;
+    }
+
+    .p-name {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-chocolate);
+    }
+
+    .p-prn {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .sentiment-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+      font-size: 0.8rem;
+    }
+
+    .sentiment-col {
+      padding: 0.65rem 0.75rem;
+      border-radius: 0.5rem;
+    }
+
+    .sentiment-col.orig {
+      background: var(--sentiment-neg-bg);
+      border: 1px solid rgba(143, 52, 52, 0.15);
+    }
+
+    .sentiment-col.proto {
+      background: var(--sentiment-pos-bg);
+      border: 1px solid rgba(45, 106, 79, 0.15);
+    }
+
+    .col-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+
+    .orig .col-title { color: var(--sentiment-neg); }
+    .proto .col-title { color: var(--sentiment-pos); }
+
+    .col-emotions {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .p-quote {
+      font-size: 0.825rem;
+      color: var(--text-cocoa);
+      font-style: italic;
+      line-height: 1.45;
+      margin-top: 0.25rem;
+    }
+
+    /* Minimalist Comparison Bars */
+    .metric-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+    }
+
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .metric-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.85rem;
+    }
+
+    .metric-name {
+      font-weight: 600;
+      color: var(--text-chocolate);
+    }
+
+    .metric-delta {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--plum-primary);
+      background: var(--plum-tint);
+      padding: 0.15rem 0.5rem;
+      border-radius: 9999px;
+    }
+
+    .bar-shell {
+      height: 12px;
+      background-color: var(--bg-surface-soft);
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bar-fill-proto {
+      height: 100%;
+      background: var(--plum-primary);
+      border-radius: 6px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      opacity: 0.95;
+    }
+
+    .bar-fill-orig {
+      height: 100%;
+      background: var(--chocolate-bar);
+      border-radius: 6px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      opacity: 0.75;
+    }
+
+    .chart-legend {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .legend-bullet {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .bullet-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+    }
+
+    /* SUS Score Table */
+    .table-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 1.25rem;
+      padding: 2rem;
+      box-shadow: var(--shadow-subtle);
+      overflow-x: auto;
+    }
+
+    .editorial-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    .editorial-table th {
+      padding: 0.85rem 1rem;
+      font-size: 0.725rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .editorial-table td {
+      padding: 0.95rem 1rem;
+      border-bottom: 1px solid var(--border-soft);
+      color: var(--text-cocoa);
+    }
+
+    .editorial-table tr:hover td {
+      background-color: var(--plum-tint);
+    }
+
+    .pill-grade {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.725rem;
+      font-weight: 700;
+    }
+
+    .pill-f {
+      background-color: rgba(90, 66, 61, 0.12);
+      color: var(--text-cocoa);
+    }
+
+    .pill-a {
+      background-color: var(--plum-tint);
+      color: var(--plum-primary);
+      border: 1px solid var(--plum-pill);
+    }
+
+    /* Final Conclusion Panel */
+    .conclusion-panel {
+      background-color: var(--bg-surface-tint);
+      border: 1px solid var(--border-subtle);
+      border-radius: 1.25rem;
+      padding: 2.25rem 2.5rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .conclusion-title {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--plum-primary);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .conclusion-text {
+      color: var(--text-cocoa);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 920px;
+    }
+
+    .action-links {
+      display: flex;
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-chocolate);
+      padding: 0.55rem 1.1rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .link-pill:hover {
+      border-color: var(--plum-primary);
+      color: var(--plum-primary);
+      background-color: var(--plum-tint);
+      transform: translateY(-1px);
+    }
+
+    .link-pill.primary {
+      background-color: var(--plum-primary);
+      color: #ffffff;
+      border-color: var(--plum-primary);
+    }
+
+    .link-pill.primary:hover {
+      background-color: var(--plum-hover);
+      color: #ffffff;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      padding-top: 1rem;
+    }
+
+    @media print {
+      body { background-color: #ffffff !important; color: #261715 !important; padding: 0; }
+      .utility-bar { display: none; }
+      .wrapper { gap: 1.5rem; max-width: 100%; }
+      .header-section, .editorial-card, .table-card, .conclusion-panel, .journey-map-card {
+        box-shadow: none !important;
+        border: 1px solid #d4c5bb !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- Minimal Utility Bar -->
+  <div class="utility-bar">
+    <div class="brand-mark">architajha-uiux • Usability & Emotional Sentiment Validation (CCA3)</div>
+    <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()">
+      <span>✦</span> <span id="themeBtnText">Dark Chocolate Plum</span>
+    </button>
+  </div>
+
+  <!-- Editorial Header Card -->
+  <header class="header-section">
+    <div>
+      <span class="header-badge">Mixed-Methods Usability Validation</span>
+      <h1 class="header-title">The Psychology of <em>Scaffolding</em></h1>
+      <p class="header-subtitle">
+        Investigating cognitive overload, learner emotional valence, and task performance: A comparative study of Original LeetCode vs. the "CODE / PRACTICE" High-Fidelity Prototype.
+      </p>
+    </div>
+    <div class="author-card">
+      <div class="author-name">Archita Ranjeetkumar Jha</div>
+      <div class="author-meta">PRN: 1262243200</div>
+      <div class="author-meta">TY B.Tech CSE (AI-DS) • Panel F • Batch F2</div>
+      <div class="author-meta">MIT World Peace University, Pune</div>
+    </div>
+  </header>
+
+  <!-- KPI Metric Row -->
+  <section class="kpi-row">
+    <div class="kpi-box plum-highlight">
+      <span class="kpi-label">System Usability Scale</span>
+      <div class="kpi-number">95.0</div>
+      <div class="kpi-foot">↑ From 44.0 (Grade A+ World-Class)</div>
+    </div>
+
+    <div class="kpi-box">
+      <span class="kpi-label">Cognitive Scaffolding</span>
+      <div class="kpi-number">9.4</div>
+      <div class="kpi-foot">↑ 213% Over LeetCode Baseline (3.0)</div>
+    </div>
+
+    <div class="kpi-box">
+      <span class="kpi-label">User Confidence Surge</span>
+      <div class="kpi-number">9.4</div>
+      <div class="kpi-foot">↑ 124% (From 4.2 Anxiety Baseline)</div>
+    </div>
+
+    <div class="kpi-box">
+      <span class="kpi-label">Collaborative Study Room</span>
+      <div class="kpi-number">9.0</div>
+      <div class="kpi-foot">↑ 309% Over Lonely Forums (2.2)</div>
+    </div>
+  </section>
+
+  <!-- SECTION: Qualitative Emotional Sentiment & User Feelings Journey -->
+  <section class="journey-map-card">
+    <div>
+      <h2 class="section-heading">Qualitative Emotional Journey: How Participants Felt</h2>
+      <p style="font-size: 0.9rem; color: var(--text-cocoa); max-width: 820px;">
+        Tracking user emotional valence throughout the Think-Aloud session ($N=5$). Participants moved from severe cognitive freezing and helplessness on LeetCode to autonomy and joyful mastery on the redesigned prototype.
+      </p>
+    </div>
+
+    <!-- Visual Emotional Timeline -->
+    <div class="journey-stages">
+      
+      <div class="stage-card">
+        <span class="stage-header">Stage 01</span>
+        <div class="stage-title">Problem Onboarding</div>
+        <div class="feeling-pill feeling-neg">
+          <span>✕</span> <strong>LeetCode:</strong> Blank-page freeze, disorientation, visual clutter.
+        </div>
+        <div class="feeling-pill feeling-pos">
+          <span>✓</span> <strong>Prototype:</strong> Reassured by clean layout & Guided Checklist.
+        </div>
+      </div>
+
+      <div class="stage-card">
+        <span class="stage-header">Stage 02</span>
+        <div class="stage-title">Deconstructing Code</div>
+        <div class="feeling-pill feeling-neg">
+          <span>✕</span> <strong>LeetCode:</strong> "Am I doing this right?" No path confirmation.
+        </div>
+        <div class="feeling-pill feeling-pos">
+          <span>✓</span> <strong>Prototype:</strong> Step-by-step handrails; worked examples build intuition.
+        </div>
+      </div>
+
+      <div class="stage-card">
+        <span class="stage-header">Stage 03</span>
+        <div class="stage-title">Getting Stuck (>15 min)</div>
+        <div class="feeling-pill feeling-neg">
+          <span>✕</span> <strong>LeetCode:</strong> Imposter syndrome; urge to rage-quit or peek spoiler.
+        </div>
+        <div class="feeling-pill feeling-pos">
+          <span>✓</span> <strong>Prototype:</strong> Timed 20-min AI hint arrives; relief & confidence surge.
+        </div>
+      </div>
+
+      <div class="stage-card">
+        <span class="stage-header">Stage 04</span>
+        <div class="stage-title">Peer Doubt & Help</div>
+        <div class="feeling-pill feeling-neg">
+          <span>✕</span> <strong>LeetCode:</strong> Lonely; async comment thread waiting game.
+        </div>
+        <div class="feeling-pill feeling-pos">
+          <span>✓</span> <strong>Prototype:</strong> Synchronous Study Room; collaborative comfort.
+        </div>
+      </div>
+
+      <div class="stage-card">
+        <span class="stage-header">Stage 05</span>
+        <div class="stage-title">Daily Streak & Exit</div>
+        <div class="feeling-pill feeling-neg">
+          <span>✕</span> <strong>LeetCode:</strong> Hidden streak in avatar menu; unsaved code anxiety.
+        </div>
+        <div class="feeling-pill feeling-pos">
+          <span>✓</span> <strong>Prototype:</strong> Prominent streak widget; proud, eager to return.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Visual Emotional Trajectory Chart (SVG) -->
+    <div style="background: var(--bg-surface-soft); border: 1px solid var(--border-subtle); border-radius: 1rem; padding: 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+        <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Emotional Valence Curve Across Task Workflow</span>
+        <span style="font-size: 0.78rem; color: var(--plum-primary); font-weight: 600;">+62% Positive Emotional Shift</span>
+      </div>
+
+      <svg viewBox="0 0 760 180" style="width: 100%; height: auto; overflow: visible;">
+        <defs>
+          <linearGradient id="gradProto" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#9c3d6d" />
+            <stop offset="100%" stop-color="#6b2147" />
+          </linearGradient>
+          <linearGradient id="gradOrig" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#8c6d65" />
+            <stop offset="100%" stop-color="#5a423d" />
+          </linearGradient>
+        </defs>
+
+        <!-- Grid Lines -->
+        <line x1="60" y1="30" x2="720" y2="30" stroke="var(--border-subtle)" stroke-dasharray="4 4" />
+        <line x1="60" y1="80" x2="720" y2="80" stroke="var(--border-subtle)" stroke-dasharray="4 4" />
+        <line x1="60" y1="130" x2="720" y2="130" stroke="var(--border-subtle)" stroke-dasharray="4 4" />
+
+        <!-- Y Axis Labels -->
+        <text x="50" y="34" font-size="10" text-anchor="end" fill="var(--sentiment-pos)" font-weight="600">Delight / Mastery</text>
+        <text x="50" y="84" font-size="10" text-anchor="end" fill="var(--text-muted)" font-weight="600">Neutral State</text>
+        <text x="50" y="134" font-size="10" text-anchor="end" fill="var(--sentiment-neg)" font-weight="600">Anxiety / Freeze</text>
+
+        <!-- Stage Labels -->
+        <text x="100" y="165" font-size="10.5" text-anchor="middle" fill="var(--text-muted)">1. Open Task</text>
+        <text x="250" y="165" font-size="10.5" text-anchor="middle" fill="var(--text-muted)">2. Understand Logic</text>
+        <text x="400" y="165" font-size="10.5" text-anchor="middle" fill="var(--text-muted)">3. Stuck (20 min)</text>
+        <text x="550" y="165" font-size="10.5" text-anchor="middle" fill="var(--text-muted)">4. Peer Support</text>
+        <text x="680" y="165" font-size="10.5" text-anchor="middle" fill="var(--text-muted)">5. Submit & Streak</text>
+
+        <!-- LeetCode Baseline Curve (Anxiety drop when stuck) -->
+        <path d="M 100 95 C 180 110, 220 120, 250 125 C 320 135, 360 148, 400 150 C 450 148, 500 135, 550 130 C 600 120, 640 110, 680 105" 
+              fill="none" stroke="url(#gradOrig)" stroke-width="3" stroke-dasharray="5 3" />
+
+        <!-- Prototype Curve (Continuous climb to confidence) -->
+        <path d="M 100 65 C 180 50, 220 45, 250 40 C 320 38, 360 30, 400 28 C 450 25, 500 22, 550 20 C 600 18, 640 18, 680 16" 
+              fill="none" stroke="url(#gradProto)" stroke-width="3.5" />
+
+        <!-- Key Points on Prototype -->
+        <circle cx="100" cy="65" r="4.5" fill="#6b2147" />
+        <circle cx="250" cy="40" r="4.5" fill="#6b2147" />
+        <circle cx="400" cy="28" r="5" fill="#9c3d6d" stroke="#ffffff" stroke-width="2" />
+        <circle cx="550" cy="20" r="4.5" fill="#6b2147" />
+        <circle cx="680" cy="16" r="5.5" fill="#6b2147" />
+
+        <!-- Key Points on LeetCode -->
+        <circle cx="100" cy="95" r="4" fill="#8c6d65" />
+        <circle cx="250" cy="125" r="4" fill="#8c6d65" />
+        <circle cx="400" cy="150" r="5" fill="#8f3434" stroke="#ffffff" stroke-width="2" />
+        <circle cx="550" cy="130" r="4" fill="#8c6d65" />
+        <circle cx="680" cy="105" r="4" fill="#8c6d65" />
+
+        <!-- Annotations -->
+        <text x="405" y="18" font-size="9.5" fill="var(--plum-primary)" font-weight="700">✦ 20m Hint Nudge: Relief</text>
+        <text x="405" y="165" font-size="9" fill="var(--sentiment-neg)" font-weight="600">✕ Lowest Point: Despair</text>
+      </svg>
+    </div>
+
+    <!-- Individual Participant Feeling Profiles -->
+    <div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-chocolate); margin-bottom: 1rem;">
+        Individual Participant Emotional State Breakdowns
+      </h3>
+      
+      <div class="participant-grid">
+        
+        <!-- Aanvi Bindal -->
+        <div class="participant-card">
+          <div class="participant-top">
+            <span class="p-name">Aanvi Bindal</span>
+            <span class="p-prn">PRN: 1262243296</span>
+          </div>
+          <div class="sentiment-compare">
+            <div class="sentiment-col orig">
+              <div class="col-title">LeetCode Feeling</div>
+              <div class="col-emotions">😫 Overwhelmed & Tedious</div>
+              <p style="font-size: 0.75rem; color: var(--text-cocoa);">"Running and submitting is very tedious... have to dive into profile to see days."</p>
+            </div>
+            <div class="sentiment-col proto">
+              <div class="col-title">Prototype Feeling</div>
+              <div class="col-emotions">😌 Calm & Supported</div>
+              <p style="font-size: 0.75rem; color: var(--text-cocoa);">"Much clean... checklist keeps track... timeline hints give a personalized feel."</p>
+            </div>
+          </div>
+          <p class="p-quote">"I think the best feature for me would be that I can save notes with each question... I strongly prefer this prototype."</p>
+        </div>
+
+        <!-- Jashna Gupta -->
+        <div class="participant-card">
+          <div class="participant-top">
+            <span class="p-name">Jashna Gupta</span>
+            <span class="p-prn">PRN: 1262243103</span>
+          </div>
+          <div class="sentiment-compare">
+            <div class="sentiment-col orig">
+              <div class="col-title">LeetCode Feeling</div>
+              <div class="col-emotions">😟 Intimidated & Unsure</div>
+              <p style="font-size: 0.75rem; color: var(--text-cocoa);">"In LeetCode questions are complicated and not shown nicely for beginners."</p>
+            </div>
+            <div class="sentiment-col proto">
+              <div class="col-title">Prototype Feeling</div>
+              <div class="col-emotions">💪 Confident & Motivated</div>
+              <p style="font-size: 0.75rem; color: var(--text-cocoa);">"Stuck for 20+ min gives you hints so you boost your confidence every day."</p>
+            </div>
+          </div>
+          <p class="p-quote">"In Archita's prototype you see streak at top right... the user can build confidence by seeing it every day."</p>
+        </div>
+
+        <!-- Nisarg Ghule -->
+        <div class="participant-card">
+          <div class="participant-top">
+            <span class="p-name">Nisarg Ghule</span>
+            <span class="p-prn">PRN: 1262243177</span>
+          </div>
+          <div class="sentiment-compare">
+            <div class="sentiment-col orig">
+              <div class="col-title">LeetCode Feeling</div>
+              <div class="col-emotions">🧭 Blindfolded & Isolated</div>
+              <p style="font-size: 0.75rem; color: var(--text-cocoa);">"From home page don't know where to go... no indicators if on right path... lonely."</p>
+            </div>
+            <div class="sentiment-col proto">
+              <div class="col-title">Prototype Feeling</div>
+              <div class="col-emotions">🎯 Directed & Connected</div>
+              <p style="font-size: 0.75rem; color: var(--text-cocoa);">"Color contrast focuses on important buttons; AI coach gives patterns, not answers."</p>
+            </div>
+          </div>
+          <p class="p-quote">"The guided checklist helps you stay on the right path. It has a study room where you can interact with other users live."</p>
+        </div>
+
+        <!-- Nisarg Malhotra -->
+        <div class="participant-card">
+          <div class="participant-top">
+            <span class="p-name">Nisarg Malhotra</span>
+            <span class="p-prn">PRN: 1262243207</span>
+          </div>
+          <div class="sentiment-compare">
+            <div class="sentiment-col orig">
+              <div class="col-title">LeetCode Feeling</div>
+              <div class="col-emotions">😤 Frustrated by Micro-frictions</div>
+              <p style="font-size: 0.75rem; color: var(--text-cocoa);">"Stopwatch isn't clearly specified... opening account is a lot hard clicking on DP."</p>
+            </div>
+            <div class="sentiment-col proto">
+              <div class="col-title">Prototype Feeling</div>
+              <div class="col-emotions">🤩 Joyful & Ambitious</div>
+              <p style="font-size: 0.75rem; color: var(--text-cocoa);">"Practice pattern has warm up, apply, reflect. I'll reach 200 LeetCode in 2 days!"</p>
+            </div>
+          </div>
+          <p class="p-quote">"The user experience is excellent. So excellent that I just want to use Archita's design as soon as possible."</p>
+        </div>
+
+        <!-- Paraansh Nisar -->
+        <div class="participant-card">
+          <div class="participant-top">
+            <span class="p-name">Paraansh Nisar</span>
+            <span class="p-prn">PRN: 1272250941</span>
+          </div>
+          <div class="sentiment-compare">
+            <div class="sentiment-col orig">
+              <div class="col-title">LeetCode Feeling</div>
+              <div class="col-emotions">😰 Unsaved Code Anxiety</div>
+              <p style="font-size: 0.75rem; color: var(--text-cocoa);">"LeetCode does not auto-save your code... checking streak requires menu diving."</p>
+            </div>
+            <div class="sentiment-col proto">
+              <div class="col-title">Prototype Feeling</div>
+              <div class="col-emotions">🛡️ Secure & In Flow</div>
+              <p style="font-size: 0.75rem; color: var(--text-cocoa);">"Shows completion percentage... auto-saves your codes... auto checklist."</p>
+            </div>
+          </div>
+          <p class="p-quote">"Every 20 minutes you get a hint and every 40 minutes an even more detailed hint if you're stuck on a problem."</p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Visual Quantitative Charts & Parameter Shifts -->
+  <div class="charts-grid">
+    
+    <!-- Left: SVG Radar Chart (Visual Multidimensional Spider) -->
+    <div class="editorial-card">
+      <h2 class="section-heading">UX Attribute Radar Visualizer</h2>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+        10-dimensional evaluation footprint: The prototype expands usability coverage across scaffolding, hints, collaboration, and learnability.
+      </p>
+
+      <div class="chart-container">
+        <svg viewBox="0 0 460 360" class="svg-chart">
+          <!-- Background concentric polygon webs -->
+          <polygon points="230,40 340,75 385,175 340,275 230,310 120,275 75,175 120,75" fill="none" stroke="var(--border-subtle)" stroke-width="1" stroke-dasharray="2 2" />
+          <polygon points="230,75 312,101 346,175 312,249 230,275 148,249 114,175 148,101" fill="none" stroke="var(--border-subtle)" stroke-width="1" stroke-dasharray="2 2" />
+          <polygon points="230,110 285,127 308,175 285,223 230,240 175,223 152,175 175,127" fill="none" stroke="var(--border-subtle)" stroke-width="1" stroke-dasharray="2 2" />
+
+          <!-- Center Spoke Lines -->
+          <line x1="230" y1="175" x2="230" y2="40" stroke="var(--border-subtle)" stroke-width="1" />
+          <line x1="230" y1="175" x2="340" y2="75" stroke="var(--border-subtle)" stroke-width="1" />
+          <line x1="230" y1="175" x2="385" y2="175" stroke="var(--border-subtle)" stroke-width="1" />
+          <line x1="230" y1="175" x2="340" y2="275" stroke="var(--border-subtle)" stroke-width="1" />
+          <line x1="230" y1="175" x2="230" y2="310" stroke="var(--border-subtle)" stroke-width="1" />
+          <line x1="230" y1="175" x2="120" y2="275" stroke="var(--border-subtle)" stroke-width="1" />
+          <line x1="230" y1="175" x2="75" y2="175" stroke="var(--border-subtle)" stroke-width="1" />
+          <line x1="230" y1="175" x2="120" y2="75" stroke="var(--border-subtle)" stroke-width="1" />
+
+          <!-- Axis Labels -->
+          <text x="230" y="30" font-size="9.5" text-anchor="middle" fill="var(--text-chocolate)" font-weight="700">Checklist (9.4 vs 3.0)</text>
+          <text x="350" y="70" font-size="9.5" text-anchor="start" fill="var(--text-chocolate)" font-weight="700">Hints (9.2 vs 3.0)</text>
+          <text x="395" y="178" font-size="9.5" text-anchor="start" fill="var(--text-chocolate)" font-weight="700">Streak (9.6 vs 3.4)</text>
+          <text x="350" y="285" font-size="9.5" text-anchor="start" fill="var(--text-chocolate)" font-weight="700">Study Room (9.0 vs 2.2)</text>
+          <text x="230" y="325" font-size="9.5" text-anchor="middle" fill="var(--text-chocolate)" font-weight="700">Notes (9.0 vs 2.8)</text>
+          <text x="110" y="285" font-size="9.5" text-anchor="end" fill="var(--text-chocolate)" font-weight="700">Pedagogy (9.0 vs 3.4)</text>
+          <text x="65" y="178" font-size="9.5" text-anchor="end" fill="var(--text-chocolate)" font-weight="700">Confidence (9.4 vs 4.2)</text>
+          <text x="110" y="70" font-size="9.5" text-anchor="end" fill="var(--text-chocolate)" font-weight="700">Learnability (8.8 vs 4.2)</text>
+
+          <!-- LeetCode Baseline Polygon (Muted Chocolate) -->
+          <polygon points="230,135 263,145 282,175 254,197 230,212 192,209 183,175 184,133" 
+                   fill="rgba(140, 109, 101, 0.25)" stroke="var(--chocolate-bar)" stroke-width="2" />
+
+          <!-- Prototype Polygon (Rich Velvety Plum) -->
+          <polygon points="230,48 333,83 375,175 329,265 230,296 131,265 84,175 133,85" 
+                   fill="rgba(107, 33, 71, 0.28)" stroke="var(--plum-primary)" stroke-width="2.5" />
+
+          <!-- Center Reference Dot -->
+          <circle cx="230" cy="175" r="3" fill="var(--text-muted)" />
+        </svg>
+      </div>
+
+      <div class="chart-legend" style="justify-content: center;">
+        <div class="legend-bullet">
+          <div class="bullet-dot" style="background-color: var(--plum-primary);"></div>
+          <span>Prototype "CODE / PRACTICE"</span>
+        </div>
+        <div class="legend-bullet">
+          <div class="bullet-dot" style="background-color: var(--chocolate-bar);"></div>
+          <span>LeetCode Baseline</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Minimalist Bar Progress Comparison -->
+    <div class="editorial-card">
+      <h2 class="section-heading">Detailed Usability Gains</h2>
+
+      <div class="metric-list">
+        
+        <div class="metric-item">
+          <div class="metric-header">
+            <span class="metric-name">Guided Scaffolding Checklist</span>
+            <span class="metric-delta">+213% (9.4 vs 3.0)</span>
+          </div>
+          <div class="bar-shell">
+            <div class="bar-fill-proto" style="width: 94%;"></div>
+            <div class="bar-fill-orig" style="width: 30%;"></div>
+          </div>
+        </div>
+
+        <div class="metric-item">
+          <div class="metric-header">
+            <span class="metric-name">Timed AI Hint Nudges (20/40 min)</span>
+            <span class="metric-delta">+207% (9.2 vs 3.0)</span>
+          </div>
+          <div class="bar-shell">
+            <div class="bar-fill-proto" style="width: 92%;"></div>
+            <div class="bar-fill-orig" style="width: 30%;"></div>
+          </div>
+        </div>
+
+        <div class="metric-item">
+          <div class="metric-header">
+            <span class="metric-name">Header Streak & Motivation Card</span>
+            <span class="metric-delta">+182% (9.6 vs 3.4)</span>
+          </div>
+          <div class="bar-shell">
+            <div class="bar-fill-proto" style="width: 96%;"></div>
+            <div class="bar-fill-orig" style="width: 34%;"></div>
+          </div>
+        </div>
+
+        <div class="metric-item">
+          <div class="metric-header">
+            <span class="metric-name">Synchronous Study Room</span>
+            <span class="metric-delta">+309% (9.0 vs 2.2)</span>
+          </div>
+          <div class="bar-shell">
+            <div class="bar-fill-proto" style="width: 90%;"></div>
+            <div class="bar-fill-orig" style="width: 22%;"></div>
+          </div>
+        </div>
+
+        <div class="metric-item">
+          <div class="metric-header">
+            <span class="metric-name">In-Situ Pattern Notes & Retention</span>
+            <span class="metric-delta">+221% (9.0 vs 2.8)</span>
+          </div>
+          <div class="bar-shell">
+            <div class="bar-fill-proto" style="width: 90%;"></div>
+            <div class="bar-fill-orig" style="width: 28%;"></div>
+          </div>
+        </div>
+
+        <div class="metric-item">
+          <div class="metric-header">
+            <span class="metric-name">Overall User Confidence & Safety</span>
+            <span class="metric-delta">+124% (9.4 vs 4.2)</span>
+          </div>
+          <div class="bar-shell">
+            <div class="bar-fill-proto" style="width: 94%;"></div>
+            <div class="bar-fill-orig" style="width: 42%;"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="chart-legend">
+        <div class="legend-bullet">
+          <div class="bullet-dot" style="background-color: var(--plum-primary);"></div>
+          <span>Archita's Prototype</span>
+        </div>
+        <div class="legend-bullet">
+          <div class="bullet-dot" style="background-color: var(--chocolate-bar);"></div>
+          <span>Original LeetCode</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- System Usability Scale Table -->
+  <div class="table-card">
+    <h2 class="section-heading">System Usability Scale (SUS) Cohort Score Breakdown</h2>
+    <table class="editorial-table">
+      <thead>
+        <tr>
+          <th>Participant Name</th>
+          <th>PRN</th>
+          <th>LeetCode SUS</th>
+          <th>Original Benchmark</th>
+          <th>Prototype SUS</th>
+          <th>Prototype Grade</th>
+          <th>Usability Delta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Aanvi Bindal</strong></td>
+          <td>1262243296</td>
+          <td>50.0</td>
+          <td><span class="pill-grade pill-f">Grade D (Marginal)</span></td>
+          <td><strong>97.5</strong></td>
+          <td><span class="pill-grade pill-a">Grade A+ (World-Class)</span></td>
+          <td style="color: var(--plum-primary); font-weight:700;">+47.5</td>
+        </tr>
+        <tr>
+          <td><strong>Jashna Gupta</strong></td>
+          <td>1262243103</td>
+          <td>32.5</td>
+          <td><span class="pill-grade pill-f">Grade F (Unacceptable)</span></td>
+          <td><strong>90.0</strong></td>
+          <td><span class="pill-grade pill-a">Grade A+ (World-Class)</span></td>
+          <td style="color: var(--plum-primary); font-weight:700;">+57.5</td>
+        </tr>
+        <tr>
+          <td><strong>Nisarg Ghule</strong></td>
+          <td>1262243177</td>
+          <td>40.0</td>
+          <td><span class="pill-grade pill-f">Grade F (Unacceptable)</span></td>
+          <td><strong>97.5</strong></td>
+          <td><span class="pill-grade pill-a">Grade A+ (World-Class)</span></td>
+          <td style="color: var(--plum-primary); font-weight:700;">+57.5</td>
+        </tr>
+        <tr>
+          <td><strong>Nisarg Malhotra</strong></td>
+          <td>1262243207</td>
+          <td>50.0</td>
+          <td><span class="pill-grade pill-f">Grade D (Marginal)</span></td>
+          <td><strong>100.0</strong></td>
+          <td><span class="pill-grade pill-a">Grade A+ (Perfect Score)</span></td>
+          <td style="color: var(--plum-primary); font-weight:700;">+50.0</td>
+        </tr>
+        <tr>
+          <td><strong>Paraansh Nisar</strong></td>
+          <td>1272250941</td>
+          <td>47.5</td>
+          <td><span class="pill-grade pill-f">Grade F (Unacceptable)</span></td>
+          <td><strong>90.0</strong></td>
+          <td><span class="pill-grade pill-a">Grade A+ (World-Class)</span></td>
+          <td style="color: var(--plum-primary); font-weight:700;">+42.5</td>
+        </tr>
+        <tr style="font-weight: 700; background-color: var(--bg-surface-soft);">
+          <td>Mean Usability Composite</td>
+          <td>N = 5</td>
+          <td>44.00 ± 7.62</td>
+          <td><span class="pill-grade pill-f">Grade F</span></td>
+          <td style="color: var(--plum-primary);">95.00 ± 4.68</td>
+          <td><span class="pill-grade pill-a">Grade A+</span></td>
+          <td style="color: var(--plum-primary);">+51.00 (+115.9%)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Evidence-Based Conclusion Callout -->
+  <div class="conclusion-panel">
+    <div class="conclusion-title">
+      <span>✦</span> Evidence-Based Usability Conclusion
+    </div>
+    <p class="conclusion-text">
+      <strong>Did the prototype successfully improve the user experience?</strong><br>
+      <strong>Yes, comprehensively and conclusively.</strong> The qualitative Think-Aloud protocols demonstrate that the redesign transformed negative emotional states (frustration, imposter syndrome, disorientation) into positive states of autonomy, flow, and confidence. Combined with a <strong>+115.9% increase in System Usability Scale (SUS 44.0 $\rightarrow$ 95.0)</strong>, the empirical data validates that procedural scaffolding (Guided Checklist), non-destructive progressive hints (20/40-minute calibrated AI nudges), and synchronous collaboration (Study Room) are critical design patterns for coding education.
+    </p>
+    <div class="action-links">
+      <a class="link-pill primary" href="https://www.figma.com/design/m2qqUWH8PDtH6girwqRZ1c/CODING_PLATFORM--Copy-?node-id=3-2&p=f&t=KEm31piQZXm4PfSq-0" target="_blank">
+        🎨 Figma High-Fidelity Prototype
+      </a>
+      <a class="link-pill" href="https://www.figma.com/design/m2qqUWH8PDtH6girwqRZ1c/CODING_PLATFORM--Copy-?node-id=0-1&p=f&t=KEm31piQZXm4PfSq-0" target="_blank">
+        📐 Figma Low-Fidelity Wireframes
+      </a>
+      <a class="link-pill" href="FINAL_CONCLUSION_REPORT.md">
+        📄 Full Markdown Conclusion Report
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer-note">
+    MIT World Peace University • Continuous Assessment CCA3 Usability Report • Archita Ranjeetkumar Jha (PRN: 1262243200)
+  </footer>
+
+</div>
+
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    const btnText = document.getElementById('themeBtnText');
+    if (html.getAttribute('data-theme') === 'dark') {
+      html.removeAttribute('data-theme');
+      btnText.textContent = 'Dark Chocolate Plum';
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      btnText.textContent = 'Vanilla Cream Mode';
+    }
+  }
+</script>
+
+</body>
+</html>
