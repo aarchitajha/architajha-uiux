@@ -34,7 +34,7 @@
 The repository is organized strictly according to the submission specification:
 
 ```
-UIUX_Assignments/
+architajha-uiux/
 ├── README.md                      # Primary Submission Document (Student info, Figma links, Conclusion)
 ├── FINAL_CONCLUSION_REPORT.md     # Standalone 1-2 page Synthesis Report
 ├── CONCLUSION_REPORT_INFOGRAPHIC.html # Visual, responsive Interactive Infographic Report
